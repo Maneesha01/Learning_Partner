@@ -1,2 +1,12 @@
-# Learning_Partner
-A simple project demonstrating parallel multi-agent architecture (two educational agents) with evaluation, logging, tracing, metrics, and deployment-ready structure.
+
+A simple multi-agent system that helps students review and test what they study using:
+- Content summarization agent
+- Quiz generation agent
+- Evaluation tools
+- Observability (logs, metrics, tracer)
+
+---
+
+## 📁 Project Structure
+
+
