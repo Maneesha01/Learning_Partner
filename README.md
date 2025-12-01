@@ -1,50 +1,41 @@
-Learning_Partner
+**Learning Partner** – Student Learning Assistant Agent
 
-Learning_Partner is a simple parallel multi-agent system designed to support students in understanding study material and testing their knowledge.
-The project demonstrates how two independent agents can be orchestrated together, along with evaluation and observability components commonly used in real-world AI applications.
+Learning Partner is a lightweight multi-agent system designed to help students review study materials and test their understanding. It automates learning workflows using modular agents, evaluation logic, and observability components.
 
-Overview
+**Features**
 
-The system processes a piece of study material using two agents running in parallel:
+1. Content Review Agent
 
-Content Agent – Generates a concise summary and identifies key points.
+Extracts key concepts from any document or online content link.
 
-Quiz Agent – Creates relevant practice questions based on the same input.
+Provides simplified explanations and summaries.
 
-The outputs are combined to give the learner both an understanding of the material and a way to evaluate their knowledge.
+2. Quiz Generation Agent
 
-Features
+Creates quizzes based on extracted content.
 
-Parallel Multi-Agent Workflow
-Two agents execute at the same time and return structured outputs.
+Supports multiple-choice and short-answer questions.
 
-Evaluation Module
-Evaluates summary and quiz quality based on relevance, clarity, completeness, and accuracy.
+3. Evaluation Engine
 
-Observability
-Includes logging, metrics, and tracing to provide transparency and support debugging.
+Automatically evaluates user answers.
 
-Secure API Handling
-Uses a .env file to safely store API keys. A .env.example file shows required variables.
+Gives scoring and feedback to improve understanding.
 
-Project Structure
-Learning_Partner/
-├── agents/
-│   ├── content_agent.py
-│   └── quiz_agent.py
-│
-├── evaluation/
-│   └── evaluator.py
-│
-├── observability/
-│   ├── logger.py
-│   ├── metrics.py
-│   └── tracer.py
-│
-├── .env.example
-├── .gitignore
-├── requirements.txt
-├── main.py
-└── README.md
+4. Observability Layer
 
+Logging for tracking agent activity.
 
+Metrics for monitoring usage and performance.
+
+Tracing for debugging multi-agent workflows.
+
+**How It Works**
+
+> The Content Agent processes input study material and extracts concepts.
+
+> The Quiz Agent generates questions from those concepts.
+
+> The Evaluation module checks the learner's answers and provides results.
+
+> Observability modules keep the system transparent, traceable, and easy to debug.
