@@ -1,41 +1,111 @@
-**Learning Partner** – Student Learning Assistant Agent
+# Learning Partner
 
-Learning Partner is a lightweight multi-agent system designed to help students review study materials and test their understanding. It automates learning workflows using modular agents, evaluation logic, and observability components.
+**A multi-agent AI system to help students revise study material efficiently and test their knowledge.**
 
-**Features**
+---
 
-1. Content Review Agent
+## Problem Statement
 
-Extracts key concepts from any document or online content link.
+Students often struggle to revise large amounts of study material efficiently or quickly check their understanding of a topic. Traditional studying can be time-consuming, and learners may not receive instant feedback on what they’ve understood correctly.
 
-Provides simplified explanations and summaries.
+**Learning_Partner** addresses this by providing a tool that automatically summarizes content and generates quizzes, allowing learners to revise smarter, test their knowledge, and get immediate feedback.
 
-2. Quiz Generation Agent
+---
 
-Creates quizzes based on extracted content.
+## Why Agents?
 
-Supports multiple-choice and short-answer questions.
+Agents are ideal for this problem because multiple tasks need to work independently but collaboratively:
 
-3. Evaluation Engine
+* Summarizing study content
+* Generating quizzes
+* Monitoring agent outputs and performance
 
-Automatically evaluates user answers.
+By using agents, each task can run in parallel or be extended separately. This modular approach makes the system scalable, maintainable, and ready for future AI enhancements.
 
-Gives scoring and feedback to improve understanding.
+---
 
-4. Observability Layer
+## What We Created
 
-Logging for tracking agent activity.
+A multi-agent learning assistant with the following components:
 
-Metrics for monitoring usage and performance.
+> **Content Review Agent** – Summarizes documents or links to extract key concepts.
 
-Tracing for debugging multi-agent workflows.
+> **Quiz Generation Agent** – Creates multiple-choice or short-answer questions based on summaries.
 
-**How It Works**
+> **Evaluation Engine** – Monitors and evaluates agent performance, ensuring summaries and quizzes meet quality criteria.
 
-> The Content Agent processes input study material and extracts concepts.
+> **Observability Layer** – Logs activities and metrics for monitoring and debugging.
 
-> The Quiz Agent generates questions from those concepts.
+These agents work together to provide a seamless study and revision experience while ensuring the agents perform effectively.
 
-> The Evaluation module checks the learner's answers and provides results.
+---
 
-> Observability modules keep the system transparent, traceable, and easy to debug.
+## Architecture
+
+```
+          +----------------+
+          |   User Input   |
+          | (Document/Link)|
+          +-------+--------+
+                  |
+                  v
+      +------------------------+
+      | Content Review Agent    |
+      | - Summarizes content    |
+      +-----------+------------+
+                  |
+                  v
+      +------------------------+
+      | Quiz Generation Agent   |
+      | - Generates questions   |
+      +-----------+------------+
+                  |
+                  v
+      +------------------------+
+      | Evaluation Engine       |
+      | - Monitors agent output |
+      +-----------+------------+
+                  |
+                  v
+      +------------------------+
+      | Observability Layer     |
+      | - Logs & metrics        |
+      +------------------------+
+                  |
+                  v
+           +-------------------+
+           | Agent Performance  |
+           | Reports & Logs     |
+           +-------------------+
+```
+
+---
+
+## How It Works
+
+1. The user inputs study material (document or link).
+2. The Content Review Agent summarizes the content.
+3. The Quiz Agent generates questions.
+4. The **Evaluation Engine** checks the quality and correctness of agent outputs.
+5. All activity is logged in the Observability Layer for monitoring.
+
+---
+
+## The Build
+
+* **Language:** Python
+* **Libraries:** Standard Python libraries (modular structure, logging, file handling)
+* **Environment:** Virtual environment using `venv`
+* **Configuration:** `.env` file for environment variables or API keys
+* **Structure:** Modular folders (`agents/`, `evaluation/`, `observability/`) for clean separation of concerns
+
+The project is lightweight, modular, and designed for future enhancements like AI integration and cloud deployment.
+
+---
+
+## If I Had More Time
+
+* Integrate LLM/NLP models for intelligent summarization and concept extraction.
+* Add a web-based UI for easier user interaction.
+* Implement persistent storage (database) to track agent performance over time.
+* Containerize the project with Docker and deploy it on Cloud.
